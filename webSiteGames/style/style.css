@@ -1,0 +1,316 @@
+@charset "UTF-8";
+@import url("https://fonts.googleapis.com/css2?family=Questrial&family=Roboto:ital,wght@0,300;0,400;0,500;1,100;1,300;1,400;1,500&display=swap");
+* {
+  padding: 0px;
+  margin: 0px;
+  box-sizing: border-box;
+}
+
+:root {
+  --principalColor: rgb(5, 19, 1);
+}
+
+a {
+  text-decoration: none;
+  color: white;
+}
+
+::-webkit-scrollbar {
+  width: 15px;
+  background-color: rgb(214, 255, 214);
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: rgb(24, 23, 22);
+}
+
+header {
+  background-color: rgb(5, 160, 0);
+  box-shadow: 1px 1px 10px black;
+  width: 100%;
+  height: 11vh;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+header .logo {
+  width: 48px;
+  margin-left: 80px;
+  transform: rotateZ(20deg);
+  animation: animaControl 2s infinite alternate ease-in-out 2s;
+}
+@keyframes animaControl {
+  to {
+    transform: rotateZ(0deg);
+    transform: scale(1.05);
+  }
+}
+header .search {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+header .search #inputSearch {
+  width: 350px;
+  height: 30px;
+  border-radius: 4px;
+  outline: none;
+  font-weight: 600;
+  font-size: 17px;
+  padding-left: 7px;
+}
+header .search #inputSearch::placeholder {
+  font-style: italic;
+}
+header .search .iconLupa {
+  width: 24px;
+  margin-right: 5px;
+}
+header ul {
+  display: flex;
+  gap: 60px;
+  padding: 10px 30px;
+  margin-right: 50px;
+}
+header ul li {
+  list-style: none;
+  font-family: "Roboto", sans-serif;
+  cursor: pointer;
+}
+header ul li a {
+  text-decoration: none;
+  color: var(--principalColor);
+  font-weight: 500;
+  font-size: 20px;
+  opacity: 0.8;
+}
+header ul li a:hover {
+  opacity: 1;
+}
+
+.section-main-games {
+  background-color: rgba(9, 255, 0, 0.562);
+  min-height: 100vh;
+  width: 100%;
+  display: flex;
+  flex-flow: column wrap;
+  padding-bottom: 100px;
+}
+.section-main-games h1 {
+  color: rgb(6, 19, 2);
+  text-align: center;
+  font-size: 6rem;
+  font-family: "Roboto", sans-serif;
+  text-transform: uppercase;
+  letter-spacing: 10px;
+  margin-top: 100px;
+  text-shadow: rgba(20, 199, 20, 0.842) 9px 0px 3px;
+  padding-bottom: 50px;
+}
+.section-main-games .containerGames {
+  display: flex;
+  position: relative;
+  left: 50%;
+  transform: translate(-50%);
+  max-width: 1050px;
+  margin-top: 50px;
+  justify-content: center;
+  gap: 30px;
+  flex-flow: row wrap;
+  padding: 20px;
+}
+.section-main-games .containerGames .box-total-game {
+  margin-bottom: 30px;
+  height: 420px;
+  flex: 1 1 300px;
+}
+.section-main-games .containerGames .boxGame {
+  background-color: rgb(0, 0, 0);
+  height: 350px;
+  border-radius: 10px;
+  display: flex;
+  flex: 1 1 300px;
+  justify-content: center;
+  align-items: center;
+  border: 2px solid rgb(5, 126, 5);
+  filter: brightness(0.8);
+  transition: all 0.5s ease-in-out;
+}
+.section-main-games .containerGames .boxGame:hover {
+  filter: brightness(1);
+}
+.section-main-games .containerGames .boxGame:hover .soon {
+  font-size: 3.2rem;
+  letter-spacing: 5px;
+}
+.section-main-games .containerGames .boxGame .soon {
+  color: white;
+  font-size: 3rem;
+  transform: rotateZ(-35deg);
+  transition: all 0.5s ease-in-out;
+  cursor: default;
+}
+
+#hit-the-number, #jump-stone, #cat-question {
+  background-position: center;
+  background-size: cover;
+  display: flex;
+  align-items: flex-end;
+  overflow: hidden;
+}
+#hit-the-number .info-game, #jump-stone .info-game, #cat-question .info-game {
+  margin-bottom: -400px;
+  width: 100%;
+  height: 100%;
+  transition: all 0.7s ease-in-out;
+}
+#hit-the-number .info-game h3,
+#hit-the-number .info-game h4,
+#hit-the-number .info-game p,
+#hit-the-number .info-game li, #jump-stone .info-game h3,
+#jump-stone .info-game h4,
+#jump-stone .info-game p,
+#jump-stone .info-game li, #cat-question .info-game h3,
+#cat-question .info-game h4,
+#cat-question .info-game p,
+#cat-question .info-game li {
+  padding: 5px;
+  margin-top: 7px;
+  font-family: "Roboto", sans-serif;
+}
+#hit-the-number .info-game h3, #jump-stone .info-game h3, #cat-question .info-game h3 {
+  margin-top: 5px;
+  margin-bottom: 25px;
+}
+#hit-the-number .info-game h4, #jump-stone .info-game h4, #cat-question .info-game h4 {
+  margin-bottom: -13px;
+  letter-spacing: 1px;
+}
+#hit-the-number .info-game .gameplay, #jump-stone .info-game .gameplay, #cat-question .info-game .gameplay {
+  display: flex;
+  justify-content: space-between;
+}
+#hit-the-number .info-game .gameplay .level, #jump-stone .info-game .gameplay .level, #cat-question .info-game .gameplay .level {
+  list-style-type: disc;
+  padding-left: 0px;
+  margin-left: 20px;
+}
+#hit-the-number .info-game .gameplay .stars-list, #jump-stone .info-game .gameplay .stars-list, #cat-question .info-game .gameplay .stars-list {
+  margin-top: 15px;
+  display: flex;
+  margin-left: 0px;
+}
+#hit-the-number .info-game .gameplay .stars-list .star, #jump-stone .info-game .gameplay .stars-list .star, #cat-question .info-game .gameplay .stars-list .star {
+  list-style: none;
+  color: gold;
+  font-size: 1.8rem;
+  cursor: pointer;
+  border: 1px solid transparent;
+}
+#hit-the-number .info-game .gameplay .stars-list .star::before, #jump-stone .info-game .gameplay .stars-list .star::before, #cat-question .info-game .gameplay .stars-list .star::before {
+  content: "★";
+}
+#hit-the-number .info-game .gameplay .stars-list .star.ativo ~ .star::before, #jump-stone .info-game .gameplay .stars-list .star.ativo ~ .star::before, #cat-question .info-game .gameplay .stars-list .star.ativo ~ .star::before {
+  content: "☆";
+}
+#hit-the-number .info-game .gameplay .stars-list .stars-list:hover ~ .star::before, #jump-stone .info-game .gameplay .stars-list .stars-list:hover ~ .star::before, #cat-question .info-game .gameplay .stars-list .stars-list:hover ~ .star::before {
+  content: "★";
+}
+#hit-the-number .info-game .gameplay .stars-list .star:hover ~ .star::before, #jump-stone .info-game .gameplay .stars-list .star:hover ~ .star::before, #cat-question .info-game .gameplay .stars-list .star:hover ~ .star::before {
+  content: "☆";
+}
+#hit-the-number .info-game .gameplay .stars-list .evaluation, #jump-stone .info-game .gameplay .stars-list .evaluation, #cat-question .info-game .gameplay .stars-list .evaluation {
+  list-style: none;
+  padding: 5px;
+  margin-top: 15px;
+  margin-left: -8px;
+  font-size: 11px;
+}
+#hit-the-number:hover .info-game, #jump-stone:hover .info-game, #cat-question:hover .info-game {
+  margin-bottom: 0px;
+  background-color: rgba(0, 0, 0, 0.808);
+  color: white;
+  border-bottom-left-radius: 8px;
+  border-bottom-right-radius: 8px;
+  width: 100%;
+  height: 100%;
+  padding: 20px 10px;
+  cursor: default;
+}
+
+.btn-play-game {
+  background-color: black;
+  color: white;
+  border-radius: 4px;
+  position: relative;
+  left: 50%;
+  margin-top: 15px;
+  transform: translate(-50%);
+  width: 97%;
+  height: 45px;
+  cursor: pointer;
+}
+.btn-play-game:hover {
+  background-color: rgb(37, 150, 15);
+}
+
+.btn-play-game:disabled {
+  filter: brightness(70%);
+}
+.btn-play-game:disabled:hover {
+  border: none;
+  color: white;
+  background-color: black;
+  cursor: default;
+}
+
+footer {
+  background-color: rgb(5, 160, 0);
+  box-shadow: 1px 1px 10px black;
+  width: 100%;
+  height: 70px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--principalColor);
+}
+footer p {
+  padding: 10px;
+}
+
+@media (max-width: 1160px) {
+  header {
+    display: flex;
+    flex-flow: wrap;
+    justify-content: center;
+    background-color: rgba(9, 255, 0, 0.562);
+  }
+  header .search {
+    display: none;
+  }
+  header .logo {
+    width: 100px;
+    margin-bottom: 30px;
+    margin-top: 30px;
+    transform: translate(-50%);
+  }
+  header nav {
+    margin-left: 50px;
+    justify-content: center;
+  }
+  header nav ul li a {
+    border-bottom: 1px solid rgb(6, 19, 2);
+    padding: 3px;
+  }
+  main h1 {
+    padding-top: 100px;
+  }
+}
+@media (max-width: 550px) {
+  header ul {
+    gap: 40px;
+  }
+}
+
+/*# sourceMappingURL=style.css.map */
